@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  messenger:
+    build: ./messenger
+    network_mode: host
+    #volumes:
+    #        - ./messenger/databases/:/home/marek/marcco/messenger/databases/:rw
+  show:
+    build: ./delivery #we use zip-file, please integrate this into the CI build process
+    network_mode: host
+    #volumes:
+    #        - ./messenger/databases/:/home/marek/marcco/messenger/databases/:rw 
+  web:
+    build: ./nginx
+    network_mode: host
